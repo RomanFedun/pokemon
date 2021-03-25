@@ -2,7 +2,7 @@
   "name": "pokedex-app",
   "version": "0.0.0",
   "engines": {
-    "node": "v15.15.1",
+    "node": "6.11.1",
     "npm": "7.3.0"
   },
   "scripts": {
