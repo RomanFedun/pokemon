@@ -1,0 +1,136 @@
+.content {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.center {
+  text-align: center;
+
+}
+
+.type-style {
+  background-color: darkkhaki;
+  width: 43%;
+  height: 24px;
+  margin: 3px auto;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.content-between {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+input{
+  margin-top: 6px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+img {
+  width: 130px;
+  height: 150px;
+  margin-left: 6%;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  img {
+    width: 100px;
+    height: 130px;
+  }
+}
+
+button {
+  width: 96%;
+  height: 50px;
+  margin-left: 2%;
+  border-radius: 9px;
+  color: white;
+  background-color: blue;
+  font-size: 22px;
+  border: blue;
+
+}
+
+.warnig {
+  color: red;
+  width: 200px;
+}
+
+section {
+  width: 42%;
+  margin-left: 5%;
+}
+
+
+.card {
+  border: 1px solid;
+  margin-left: 2px;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 250px;
+  padding-bottom: 5px;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.viol {
+  background-color: violet;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.grey {
+  background-color: gray;
+}
+
+.broun {
+  background-color: saddlebrown;
+}
+
+.else {
+  background-color: mediumvioletred;
+}
+
+.fairy {
+  background-color: darkgrey
+}
+
+.ground {
+  background-color: darkgoldenrod
+}
+
+.fighting {
+  background-color: aquamarine
+}
+
+.psychic {
+  background-color: darkkhaki
+}
+
+.rock {
+  background-color: wheat
+}
+
+.steel {
+  background-color: lightgrey
+}

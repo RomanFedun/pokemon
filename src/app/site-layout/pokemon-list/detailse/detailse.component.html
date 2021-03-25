@@ -1,0 +1,49 @@
+<div class="sticky card">
+  <img [src]="details$.imageSrc">
+  <section>
+    <h1>
+      {{details$.pokeName}}
+      <span> #</span>
+      <span *ngIf="details$.id < 10">0</span>
+      <span *ngIf="details$.id < 100">0</span>
+      <span>{{details$.id}}</span>
+    </h1>
+
+  </section>
+  <main>
+    <table>
+      <tr *ngFor="let typ of details$.type">
+        <td>type</td>
+        <td>{{typ}}</td>
+      </tr>
+      <tr>
+        <td>Attack</td>
+        <td>{{details$.Attack}}</td>
+      </tr>
+      <tr>
+        <td>Defense</td>
+        <td>{{details$.Defence}}</td>
+      </tr>
+      <tr>
+        <td>HP</td>
+        <td>{{details$.Defence}}</td>
+      </tr>
+      <tr>
+        <td>SP Attack</td>
+        <td>{{details$.SPAttack}}</td>
+      </tr><tr>
+        <td>SP Defense</td>
+        <td>{{details$.SPDefence}}</td>
+      </tr><tr>
+        <td>Speed</td>
+        <td>{{details$.Speed}}</td>
+      </tr><tr>
+        <td>Weight</td>
+        <td>{{details$.Weight}}</td>
+      </tr><tr>
+        <td>Total moves</td>
+        <td>{{details$.totalMoves}}</td>
+      </tr>
+    </table>
+  </main>
+</div>

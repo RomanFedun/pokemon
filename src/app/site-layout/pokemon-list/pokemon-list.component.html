@@ -1,0 +1,60 @@
+<input type="text" placeholder="find by type..." [(ngModel)]="searchByType">
+
+<div class="content">
+  <section>
+    <div
+      *ngIf="pokeSrc$ ; else empty"
+      class="content">
+      <div
+        class="card"
+
+        *ngFor="let pokemon of pokemonList | searchType:searchByType"
+
+        [routerLink]="['/list', pokemon.id]"
+        (click)="onLoadData(pokemon.id)"
+      >
+        <div>
+          <img [src]="pokemon.imageSrc">
+          <div class="center"><h3>{{pokemon.pokeName}}</h3></div>
+          <div class="content-between">
+            <div
+              class="type-style"
+              *ngFor="let typ of pokemon.type"
+              [ngClass]="{
+              'yellow': typ == 'electric',
+              'red': typ == 'fire',
+              'green': typ == 'grass',
+              'viol': typ == 'poison',
+              'blue': typ == 'water',
+              'grey': typ == 'flying',
+              'broun': typ == 'bug',
+              'else': typ == 'normal',
+               'fairy': typ == 'fairy',
+               'ground': typ == 'ground',
+               'fighting': typ == 'fighting',
+               'psychic': typ == 'psychic',
+               'rock': typ == 'rock',
+               'steel': typ == 'steel'
+              }"
+            >
+              {{typ}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <button (click)="loadMore()">load more</button>
+
+    </div>
+    <ng-template #empty>
+      <div class="center warnig">
+        check your Internet connection.
+      </div>
+    </ng-template>
+
+
+  </section>
+  <section class="sticky">
+    <router-outlet></router-outlet>
+  </section>
+</div>
+
