@@ -1,8 +1,31 @@
 # PokedexApp
 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
 ## Development server
+
+1. Create the new folder "pokemon" on your computer.
+2. Clone or download project from Git hub in "pokemon" folder.
+3. Open CMD.
+4. In CMD  you should get to the ".../pokemon/pokemon-main".
+    ...for example:  C:\>cd pokemon
+                     
+                     C:\pokemon>cd pokemon-main
+                     
+5. Then you should check a version of NODE.JS :
+                     C:\pokemon\pokemon-main>node -v (Angular require 10. upper version. It was built on v15.5.1 NODE).
+                     
+6. Run command :    C:\pokemon\pokemon-main>npm install  (npm will install all dependencies on the project).
+7. Run command :    C:\pokemon\pokemon-main>ng serve     (npm will generate the project).  
+
+8. After compiling  Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/  
+
+9. **** It is looks that respond from the "pokemon data storage" arrives with some problems, so if App works incorrect,
+ try to reload few times or  reload with CTRL+SHIFT+R 
+                                                                                                           
+
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -14,14 +37,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
