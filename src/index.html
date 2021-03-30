@@ -5,13 +5,44 @@
   <title>PokedexApp</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="339429852768-7aqd7ecrvhiunp6ccefo7d4a8lddg4rm.apps.googleusercontent.com">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
-  </style></head>
+  </style>
+</head>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <body>
 
-  <app-root></app-root>
+<app-root></app-root>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.1/firebase-app.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBowW3x6QOa-ehw9YPIodgKW0CIU89_m2g",
+    authDomain: "pokemon-6216b.firebaseapp.com",
+    projectId: "pokemon-6216b",
+    storageBucket: "pokemon-6216b.appspot.com",
+    messagingSenderId: "339429852768",
+    appId: "1:339429852768:web:905e5bd32714ba30622505"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>

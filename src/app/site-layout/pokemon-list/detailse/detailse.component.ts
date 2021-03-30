@@ -12,35 +12,23 @@ export class DetailseComponent implements OnInit, AfterViewInit, DoCheck {
 
   pokemon: PokemonListComponent
 
-  id: any
-  details$
+  id = 0
+  details$: any
 
   constructor(private router: Router,
-              private serveService: ServeService  ) { }
+              private serveService: ServeService) {
+  }
 
   ngOnInit() {
-
   }
 
   ngAfterViewInit() {
-    this.id = this.serveService.getId()
-    this.details$ = this.serveService.dataListOfPokemon[this.id - 1]
-    console.clear()
-
   }
 
   ngDoCheck() {
-    this.id = this.serveService.getId()
-    if (!this.id) {
-     // this.pokemon.onLoadData(1)
-      this.id = 1
-      this.details$.imageSrc = ''
-    } else {
-
-      this.details$ = this.serveService.dataListOfPokemon[this.id - 1]
-      console.clear()
-
-    }
+    this.id = this.serveService.poke_id
+    this.details$ = this.serveService.dataListOfPokemon[this.id - 1]
+    console.clear()
 
   }
 

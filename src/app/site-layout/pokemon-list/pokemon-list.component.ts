@@ -42,11 +42,13 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
   searchByType = ''
 
   constructor(private serveService: ServeService) {
+    this.pokemonList = this.serveService.dataStart
+
   }
 
   ngOnInit() {
-    this.fetch(ServeService.urlList)
 
+    this.fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12')
 
   }
 
@@ -58,7 +60,6 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
 
   ngAfterViewInit(): any {
 
-
   }
 
   ngAfterViewChecked(){
@@ -67,17 +68,19 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
   }
 
 
+
+
   fetch(source) {
 
-   this.oSub =  this.serveService.loadList(source).subscribe(card => {
-        this.pokeData = card
+   this.serveService.loadList(source).subscribe(card => {
+        this.pokeData = card;
         this.nextUrl = card.next
-      }, error => console.error(error),
+      }, error => console.error('done'),
       () => {
         // @ts-ignore
         this.pokeData.results.map((item) => {
           this.serveService.loadData(item.url).subscribe(data => {
-              this.pokeName = data.forms[0].name
+              this.pokeName = data.forms[0].name;
               data.types.map((i) => {
                 this.typesArr.push(i.type.name)
               })
@@ -95,14 +98,16 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
               this.pokemonData.Weight = data.weight
               this.pokemonData.totalMoves = data.moves.length
 
-              this.pokemonList[this.pokemonData.id - 1] = this.pokemonData
 
             },
-            error => console.error(error),
+            error => console.error('done'),
             () => {
               this.pokemonData.type = this.typesArr
               this.pokeSrc$ = true
               this.typesArr = []
+
+              this.pokemonList[this.pokemonData.id - 1] = this.pokemonData
+
 
               this.pokemonData = {
                 imageSrc: '',
@@ -119,16 +124,14 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
                 totalMoves: 0
               }
               console.clear()
+
             }
           )
+
+
         })
-        // @ts-ignore
-        this.pokeData.results = []
-        this.serveService.dataListOfPokemon = this.pokemonList
-        this.pokeData = {}
 
       })
-
   }
 
 
@@ -137,8 +140,13 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
   }
 
   onLoadData(_id) {
+    this.serveService.dataListOfPokemon = this.pokemonList
+
     this.serveService.poke_id = _id
+
+
   }
+
 
 
 }
