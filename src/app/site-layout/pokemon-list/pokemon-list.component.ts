@@ -36,7 +36,6 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
 
   pokeData: object
   image: File
-  oSub: Subscription
   loading = false
   reloading = false
   searchByType = ''
@@ -53,7 +52,7 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
   }
 
   ngDoCheck() {
-    console.clear()
+    // console.clear()
 
   }
 
@@ -63,7 +62,7 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
   }
 
   ngAfterViewChecked(){
-    console.clear()
+    // console.clear()
 
   }
 
@@ -75,7 +74,7 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
    this.serveService.loadList(source).subscribe(card => {
         this.pokeData = card;
         this.nextUrl = card.next
-      }, error => console.error('done'),
+      }, error => console.error(error),
       () => {
         // @ts-ignore
         this.pokeData.results.map((item) => {
@@ -94,19 +93,21 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
               this.pokemonData.SPAttack = data.stats[3].base_stat
               this.pokemonData.SPDefence = data.stats[4].base_stat
               this.pokemonData.Speed = data.stats[5].base_stat
-              this.pokemonData.imageSrc = `https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`
+              // this.pokemonData.imageSrc = `https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`
               this.pokemonData.Weight = data.weight
               this.pokemonData.totalMoves = data.moves.length
 
 
             },
-            error => console.error('done'),
+            error => console.error(error),
             () => {
+              this.pokemonData.imageSrc = `https://pokeres.bastionbot.org/images/pokemon/${this.pokemonData?.id}.png`
+
               this.pokemonData.type = this.typesArr
               this.pokeSrc$ = true
               this.typesArr = []
 
-              this.pokemonList[this.pokemonData.id - 1] = this.pokemonData
+              this.pokemonList[this.pokemonData?.id - 1] = this.pokemonData
 
 
               this.pokemonData = {
@@ -123,7 +124,7 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
                 Weight: 0,
                 totalMoves: 0
               }
-              console.clear()
+              // console.clear()
 
             }
           )
@@ -148,5 +149,7 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
   }
 
 
-
+  clearInput() {
+    this.searchByType = ''
+  }
 }

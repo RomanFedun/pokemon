@@ -7,7 +7,7 @@ import {ServeService} from "../serve.service";
   templateUrl: './site-layout.component.html',
   styleUrls: ['./site-layout.component.scss']
 })
-export class SiteLayoutComponent implements OnInit, AfterViewInit {
+export class SiteLayoutComponent implements OnInit {
 
   pokemonList: PokemonListComponent
 
@@ -16,9 +16,6 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit() {
-    // this.pokemonList.fetch(ServeService.urlList)
 
-  }
 
 }

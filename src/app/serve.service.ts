@@ -6,7 +6,6 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ServeService {
-  static urlList = 'https://pokeapi.co/api/v2/pokemon/?limit=12&offset=0'
   urlImagesSrc = 'https://pokeres.bastionbot.org/images/pokemon'
 
   poke_id = 1

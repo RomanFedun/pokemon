@@ -11,20 +11,11 @@ export class SearchPipe implements PipeTransform{
       return data
     } else {
 
-
-      // // @ts-ignore
-      // return data.filter(data => {
-      //   return data.type[0].toLowerCase().includes(search.toLowerCase())
-      // })
-
       // @ts-ignore
       return data.filter(data => {
 
         return data.type.join(' ').toLowerCase().includes(search.toLowerCase())
       })
-
-
   }
-
 }
 }

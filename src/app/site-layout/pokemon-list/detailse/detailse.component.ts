@@ -27,8 +27,8 @@ export class DetailseComponent implements OnInit, AfterViewInit, DoCheck {
 
   ngDoCheck() {
     this.id = this.serveService.poke_id
-    this.details$ = this.serveService.dataListOfPokemon[this.id - 1]
-    console.clear()
+    this.details$ = this?.serveService?.dataListOfPokemon?.[this?.id - 1]
+    // console.clear()
 
   }
 
