@@ -21,9 +21,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 7. Run command :    C:\pokemon\pokemon-main>ng serve     (npm will generate the project).  
 
 8. After compiling  Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/  
-
-9. **** It is looks that respond from the "pokemon data storage" arrives with some problems, so if App works incorrect,
- try to reload few times or  reload with CTRL+SHIFT+R 
                                                                                                            
 
 

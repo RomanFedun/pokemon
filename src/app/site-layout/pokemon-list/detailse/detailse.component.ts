@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, DoCheck, OnInit} from '@angular/core';
+import {Component, DoCheck} from '@angular/core';
 import {Router} from "@angular/router";
 import {PokemonListComponent} from "../pokemon-list.component";
 import {ServeService} from "../../../serve.service";
@@ -8,7 +8,7 @@ import {ServeService} from "../../../serve.service";
   templateUrl: './detailse.component.html',
   styleUrls: ['./detailse.component.scss']
 })
-export class DetailseComponent implements OnInit, AfterViewInit, DoCheck {
+export class DetailseComponent implements DoCheck {
 
   pokemon: PokemonListComponent
 
@@ -19,16 +19,10 @@ export class DetailseComponent implements OnInit, AfterViewInit, DoCheck {
               private serveService: ServeService) {
   }
 
-  ngOnInit() {
-  }
-
-  ngAfterViewInit() {
-  }
 
   ngDoCheck() {
     this.id = this.serveService.poke_id
     this.details$ = this?.serveService?.dataListOfPokemon?.[this?.id - 1]
-    // console.clear()
 
   }
 

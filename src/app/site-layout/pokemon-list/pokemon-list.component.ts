@@ -1,6 +1,5 @@
-import {AfterViewChecked, AfterViewInit, Component, DoCheck, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ServeService} from "../../serve.service";
-import { Subscription} from "rxjs";
 import { PokemonData} from "../../interface";
 
 @Component({
@@ -8,7 +7,7 @@ import { PokemonData} from "../../interface";
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss']
 })
-export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, AfterViewChecked {
+export class PokemonListComponent implements OnInit {
 
   ImgSrc = this.serveService.urlImagesSrc
 
@@ -51,23 +50,6 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
 
   }
 
-  ngDoCheck() {
-    // console.clear()
-
-  }
-
-
-  ngAfterViewInit(): any {
-
-  }
-
-  ngAfterViewChecked(){
-    // console.clear()
-
-  }
-
-
-
 
   fetch(source) {
 
@@ -93,7 +75,6 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
               this.pokemonData.SPAttack = data.stats[3].base_stat
               this.pokemonData.SPDefence = data.stats[4].base_stat
               this.pokemonData.Speed = data.stats[5].base_stat
-              // this.pokemonData.imageSrc = `https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`
               this.pokemonData.Weight = data.weight
               this.pokemonData.totalMoves = data.moves.length
 
@@ -124,14 +105,9 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
                 Weight: 0,
                 totalMoves: 0
               }
-              // console.clear()
-
             }
           )
-
-
         })
-
       })
   }
 
@@ -145,9 +121,7 @@ export class PokemonListComponent implements OnInit, AfterViewInit, DoCheck, Aft
 
     this.serveService.poke_id = _id
 
-
   }
-
 
   clearInput() {
     this.searchByType = ''

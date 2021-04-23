@@ -1,8 +1,3 @@
-export interface Card {
-  next: string
-  previous: string
-  results: any
-}
 
 export interface PokemonData {
   imageSrc: string
