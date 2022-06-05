@@ -60,7 +60,6 @@ export class PokemonListComponent implements OnInit {
       () => {
         // @ts-ignore
         this.pokeData.results.map((item) => {
-          console.log(item.url);
           this.serveService.loadData(item.url).subscribe(data => {
               this.pokeName = data.forms[0].name;
               data.types.map((i) => {
