@@ -55,7 +55,7 @@ export class PokemonListComponent implements OnInit {
 
    this.serveService.loadList(source).subscribe(card => {
         this.pokeData = card;
-        this.nextUrl = card.next
+        this.nextUrl = card.next;
       }, error => console.error(error),
       () => {
         // @ts-ignore
@@ -64,7 +64,7 @@ export class PokemonListComponent implements OnInit {
               this.pokeName = data.forms[0].name;
               data.types.map((i) => {
                 this.typesArr.push(i.type.name)
-              })
+              });
 
               this.pokemonData.pokeName = data.forms[0].name
               this.pokemonData.id = data.id
@@ -82,11 +82,11 @@ export class PokemonListComponent implements OnInit {
             },
             error => console.error(error),
             () => {
-              this.pokemonData.imageSrc = `https://pokeres.bastionbot.org/images/pokemon/${this.pokemonData?.id}.png`
+              this.pokemonData.imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemonData?.id}.png`;
 
-              this.pokemonData.type = this.typesArr
-              this.pokeSrc$ = true
-              this.typesArr = []
+              this.pokemonData.type = this.typesArr;
+              this.pokeSrc$ = true;
+              this.typesArr = [];
 
               this.pokemonList[this.pokemonData?.id - 1] = this.pokemonData
 
