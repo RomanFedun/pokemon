@@ -189,7 +189,7 @@ export class ServeService {
     return this.http.get(`${url}.json`);
     }
 
-  loadData( url ): Observable<any>{
+  loadData(url): Observable<any>{
     return this.http.get(`${ url }`);
   }
 
