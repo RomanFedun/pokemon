@@ -60,7 +60,7 @@ export class PokemonListComponent implements OnInit {
       () => {
         // @ts-ignore
         this.pokeData.results.map((item) => {
-          this.serveService.loadData(item.url).subscribe(data => {
+          this.serveService.loadData( item.url ).subscribe(data => {
               this.pokeName = data.forms[0].name;
               data.types.map((i) => {
                 this.typesArr.push(i.type.name)
@@ -86,7 +86,7 @@ export class PokemonListComponent implements OnInit {
 
               this.pokemonData.type = this.typesArr
               this.pokeSrc$ = true
-              this.typesArr = []
+              this.typesArr = [ ]
 
               this.pokemonList[this.pokemonData?.id - 1] = this.pokemonData
 
