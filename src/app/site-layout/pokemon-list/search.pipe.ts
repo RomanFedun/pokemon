@@ -11,9 +11,9 @@ export class SearchPipe implements PipeTransform{
       return data
     } else {
 
-      return data.filter(data => {
+      return data.filter(text => {
 
-        return data.type.join(' ').toLowerCase().includes(search.toLowerCase())
+        return text.type.join(' ').toLowerCase().includes(search.toLowerCase())
       })
   }
 }
