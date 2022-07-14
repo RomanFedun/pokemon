@@ -13,7 +13,7 @@ export class SearchPipe implements PipeTransform{
 
       return data.filter(text => {
 
-        return text.type.join(' ').toLowerCase().includes(search.toLowerCase())
+        return text.type.join(' ').toLowerCase().includes(search.toLowerCase( ))
       })
   }
 }
